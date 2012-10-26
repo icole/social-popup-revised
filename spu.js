@@ -8,14 +8,21 @@
 			if (defaults.closeable == true) {
 				spClose = '<a href="#" onClick="spuFlush('+defaults.days_no_click+');" id="spu-close">Close<a/>';
 			}
-			var sPop = '<div id="spu-bg"></div><div id="spu-main"><div id="spu-title">' + spClose + '' + defaults.title + '</div><div id="spu-msg-cont"><div id="spu-msg">' + defaults.message + '</div>';
-			var googlePop = '<div class="spu-button"><div class="g-plusone" data-callback="googleCB" data-action="share" data-annotation="bubble" data-height="24" data-href="' + defaults.go_url + '"></div></div>';
-			var facebookPop = '<div class="spu-button"><div id="fb-root"></div><fb:like href="' + defaults.fb_url + '" send="false"  show_faces="false" data-layout="button_count"></fb:like></div>';
-			var twitPop = '<div class="spu-button first"><a href="https://twitter.com/' + defaults.twitter_user + '" class="twitter-follow-button" data-show-count="false" data-size="large">Follow Me</a></div>';
+			var markup = '';
+			markup = markup + '<div id="spu-bg"></div><div id="spu-main"><div id="spu-title">' + spClose + '' + defaults.title + '</div><div id="spu-msg-cont"><div id="spu-msg">' + defaults.message + '</div>';
+			if (defaults.twitter_enabled == true) {
+				markup = markup + '<div class="spu-button first"><a href="https://twitter.com/' + defaults.twitter_user + '" class="twitter-follow-button" data-show-count="false" data-size="large">Follow Me</a></div>';
+			}
+			if (defaults.fb_enabled == true) {
+				markup = markup + '<div class="spu-button"><div id="fb-root"></div><fb:like href="' + defaults.fb_url + '" send="false"  show_faces="false" data-layout="button_count"></fb:like></div>';
+			}
+			if (defaults.go_enabled == true) {
+				markup = markup + '<div class="spu-button"><div class="g-plusone" data-callback="googleCB" data-action="share" data-annotation="bubble" data-height="24" data-href="' + defaults.go_url + '"></div></div>';
+			}
 			var sCredits = '';
 			if (defaults.credits) sCredits = '<span style="font-size:10px;float: right;margin-top: -6px;">By <a href="http://www.masquewordpress.com">MasqueWordpress.com</a></span>';
-			var sBottom = '<div class="step-clear"></div></div><div id="spu-bottom">' + sCredits + '</div></div>';
-			return sPop + twitPop + facebookPop + googlePop + sBottom;
+			markup = markup + '<div class="step-clear"></div></div><div id="spu-bottom">' + sCredits + '</div></div>';
+			return markup;
 		}
 		var markup = getPopHTML();
 		$('body').append(markup);

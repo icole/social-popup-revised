@@ -127,17 +127,43 @@ class socialPopup
 			        </fieldset>
 			        </td>
 		    	</tr>
-		    
-		    	<tr valign="top">
-		        	<th scope="row">Google '+1' URL</th>
+
+				<tr valign="top">
+		        	<th scope="row">Show Twitter</th>
 		        	<td><fieldset>
-		        		<input class="field" name="spu_option[google]" type="text" value="<?php echo $options['google']; ?>" />
+						<select name="spu_option[twitter-enabled]" >
+			                <option value="true" <?PHP if($options['twitter-enabled'] == 'true'){echo 'selected="selected"';} ?>>Enabled</option>
+			                <option value="false" <?PHP if($options['twitter-enabled'] == 'false'){echo 'selected="selected"';} ?>>Disabled</option>
+						</select>
 		        
-		        		<div class="description">The Google url you want to +1 (include 'http://'). Leave empty for current visitor page</div>
+						<div class="description">If enabled, the Twitter button will show.</div>
 		        	</fieldset>
 		        	</td>
 		    	</tr>
-		   
+
+		    	<tr valign="top">
+		        	<th scope="row">Twitter Username</th>
+		        	<td><fieldset>
+		        		<input class="field" name="spu_option[twitter]" type="text"  value="<?php echo $options['twitter']; ?>" />
+		        
+		        		<div class="description">The Twitter usename to use with the follow, without "@" sign</div>
+		        	</fieldset>
+		        	</td>
+		    	</tr>
+
+		    	<tr valign="top">
+		        	<th scope="row">Show Facebook</th>
+		        	<td><fieldset>
+						<select name="spu_option[fb-enabled]" >
+			                <option value="true" <?PHP if($options['fb-enabled'] == 'true'){echo 'selected="selected"';} ?>>Enabled</option>
+			                <option value="false" <?PHP if($options['fb-enabled'] == 'false'){echo 'selected="selected"';} ?>>Disabled</option>
+						</select>
+		        
+						<div class="description">If enabled, the Facebook button will show.</div>
+		        	</fieldset>
+		        	</td>
+		    	</tr>
+
 		    	<tr valign="top">
 		     	   <th scope="row">Facebook URL</th>
 		     	   <td><fieldset>
@@ -147,13 +173,26 @@ class socialPopup
 		     	   </fieldset>
 		     	   </td>
 		    	</tr>
-		    	
+
 		    	<tr valign="top">
-		        	<th scope="row">Twitter Username</th>
+		        	<th scope="row">Show Google '+1'</th>
 		        	<td><fieldset>
-		        		<input class="field" name="spu_option[twitter]" type="text"  value="<?php echo $options['twitter']; ?>" />
+						<select name="spu_option[google-enabled]" >
+			                <option value="true" <?PHP if($options['google-enabled'] == 'true'){echo 'selected="selected"';} ?>>Enabled</option>
+			                <option value="false" <?PHP if($options['google-enabled'] == 'false'){echo 'selected="selected"';} ?>>Disabled</option>
+						</select>
 		        
-		        		<div class="description">The Twitter usename to use with the follow, without "@" sign</div>
+						<div class="description">If enabled, the Google '+1' button will show.</div>
+		        	</fieldset>
+		        	</td>
+		    	</tr>
+		    
+		    	<tr valign="top">
+		        	<th scope="row">Google '+1' URL</th>
+		        	<td><fieldset>
+		        		<input class="field" name="spu_option[google]" type="text" value="<?php echo $options['google']; ?>" />
+		        
+		        		<div class="description">The Google url you want to +1 (include 'http://'). Leave empty for current visitor page</div>
 		        	</fieldset>
 		        	</td>
 		    	</tr>
@@ -270,9 +309,12 @@ class socialPopup
 							closeable: <?php echo $options['close']; ?>,
 							advancedClose: <?php echo $options['close-advanced']; ?>,
 							opacity: "<?php echo $options['bg_opacity']; ?>",
-							fb_url: "<?php echo $options['facebook']; ?>",
-							go_url: "<?php echo $options['google']; ?>",
+							twitter_enabled: <?php echo $options['twitter-enabled']; ?>,
 							twitter_user: "<?php echo $options['twitter']; ?>",
+							fb_enabled: <?php echo $options['fb-enabled']; ?>,
+							fb_url: "<?php echo $options['facebook']; ?>",
+							go_enabled: <?php echo $options['google-enabled']; ?>,
+							go_url: "<?php echo $options['google']; ?>",
 							days_no_click: "<?php echo $options['days-no-click']; ?>",
 							credits: <?php echo $options['credits'] == 'true' ? 'true' : 'false'; ?>
 							
