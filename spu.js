@@ -10,7 +10,7 @@
 			}
 			var markup = '';
 			markup = markup + '<div id="spu-bg"></div><div id="spu-main"><div id="spu-title">' + spClose + '' + defaults.title + '</div><div id="spu-msg-cont"><div id="spu-msg">' + defaults.message + '</div>';
-			if (defaults.twitter_enabled == true) {
+			if (defaults.tw_enabled == true) {
 				markup = markup + '<div class="spu-button first"><a href="https://twitter.com/' + defaults.twitter_user + '" class="twitter-follow-button" data-show-count="false" data-size="large">Follow Me</a></div>';
 			}
 			if (defaults.fb_enabled == true) {

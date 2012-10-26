@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  Plugin Name: Social PopUP - Google+, Facebook and Twitter popup
  Plugin URI: http://www.masquewordpress.com/plugins/social-popup/
  Version: 1.2
@@ -154,9 +154,9 @@ class socialPopup
 		    	<tr valign="top">
 		        	<th scope="row">Show Facebook</th>
 		        	<td><fieldset>
-						<select name="spu_option[fb-enabled]" >
-			                <option value="true" <?PHP if($options['fb-enabled'] == 'true'){echo 'selected="selected"';} ?>>Enabled</option>
-			                <option value="false" <?PHP if($options['fb-enabled'] == 'false'){echo 'selected="selected"';} ?>>Disabled</option>
+						<select name="spu_option[facebook-enabled]" >
+			                <option value="true" <?PHP if($options['facebook-enabled'] == 'true'){echo 'selected="selected"';} ?>>Enabled</option>
+			                <option value="false" <?PHP if($options['facebbook-enabled'] == 'false'){echo 'selected="selected"';} ?>>Disabled</option>
 						</select>
 		        
 						<div class="description">If enabled, the Facebook button will show.</div>
@@ -309,9 +309,9 @@ class socialPopup
 							closeable: <?php echo $options['close']; ?>,
 							advancedClose: <?php echo $options['close-advanced']; ?>,
 							opacity: "<?php echo $options['bg_opacity']; ?>",
-							twitter_enabled: <?php echo $options['twitter-enabled']; ?>,
+							tw_enabled: <?php echo $options['twitter-enabled']; ?>,
 							twitter_user: "<?php echo $options['twitter']; ?>",
-							fb_enabled: <?php echo $options['fb-enabled']; ?>,
+							fb_enabled: <?php echo $options['facebook-enabled']; ?>,
 							fb_url: "<?php echo $options['facebook']; ?>",
 							go_enabled: <?php echo $options['google-enabled']; ?>,
 							go_url: "<?php echo $options['google']; ?>",
