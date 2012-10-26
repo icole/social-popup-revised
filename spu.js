@@ -13,6 +13,9 @@
 			if (defaults.tw_enabled == true) {
 				markup = markup + '<div class="spu-button first"><a href="https://twitter.com/' + defaults.twitter_user + '" class="twitter-follow-button" data-show-count="false" data-size="large">Follow Me</a></div>';
 			}
+			if (defaults.pt_enabled == true) {
+				markup = markup + '<div class="spu-button"><a href="http://pinterest.com/' + defaults.pt_user + '"><img src="http://passets-cdn.pinterest.com/images/pinterest-button.png" width="78" height="26" alt="Follow Me on Pinterest" /></a></div>'
+			}
 			if (defaults.fb_enabled == true) {
 				markup = markup + '<div class="spu-button"><div id="fb-root"></div><fb:like href="' + defaults.fb_url + '" send="false"  show_faces="false" data-layout="button_count"></fb:like></div>';
 			}

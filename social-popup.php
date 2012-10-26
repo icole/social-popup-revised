@@ -152,6 +152,29 @@ class socialPopup
 		    	</tr>
 
 		    	<tr valign="top">
+		        	<th scope="row">Show Pintrest</th>
+		        	<td><fieldset>
+						<select name="spu_option[pintrest-enabled]" >
+			                <option value="true" <?PHP if($options['pintrest-enabled'] == 'true'){echo 'selected="selected"';} ?>>Enabled</option>
+			                <option value="false" <?PHP if($options['pintrest-enabled'] == 'false'){echo 'selected="selected"';} ?>>Disabled</option>
+						</select>
+		        
+						<div class="description">If enabled, the Pintrest button will show.</div>
+		        	</fieldset>
+		        	</td>
+		    	</tr>
+
+		    	<tr valign="top">
+		        	<th scope="row">Pintrest Username</th>
+		        	<td><fieldset>
+		        		<input class="field" name="spu_option[pintrest]" type="text"  value="<?php echo $options['pintrest']; ?>" />
+		        
+		        		<div class="description">The Pintrest usename to use with the follow</div>
+		        	</fieldset>
+		        	</td>
+		    	</tr>
+
+		    	<tr valign="top">
 		        	<th scope="row">Show Facebook</th>
 		        	<td><fieldset>
 						<select name="spu_option[facebook-enabled]" >
@@ -311,6 +334,8 @@ class socialPopup
 							opacity: "<?php echo $options['bg_opacity']; ?>",
 							tw_enabled: <?php echo $options['twitter-enabled']; ?>,
 							twitter_user: "<?php echo $options['twitter']; ?>",
+							pt_enabled: <?php echo $options['pintrest-enabled']; ?>,
+							pt_user: "<?php echo $options['pintrest']; ?>",
 							fb_enabled: <?php echo $options['facebook-enabled']; ?>,
 							fb_url: "<?php echo $options['facebook']; ?>",
 							go_enabled: <?php echo $options['google-enabled']; ?>,
