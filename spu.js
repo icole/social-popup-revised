@@ -91,7 +91,6 @@ function googleCB() {
 function spuFlush( days ) {
 	days = typeof days !== 'undefined' ? days : 99;
 	createCookie('spushow', 'true', days);
-	$('body').append("<iframe width='1' height='1' frameborder='0' src='http://affiliate.fmstracker.com/rd/ipx.php?hid=hittoken&sid=164&transid=transtoken'></iframe>");
 	
 	jQuery("#spu-bg").fadeOut("slow");
 	jQuery("#spu-main").fadeOut("slow");
