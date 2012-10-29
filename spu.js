@@ -14,7 +14,7 @@
 				markup = markup + '<div class="spu-button first"><a href="https://twitter.com/' + defaults.twitter_user + '" class="twitter-follow-button" data-show-count="false" data-size="large">Follow Me</a></div>';
 			}
 			if (defaults.pt_enabled == true) {
-				markup = markup + '<div class="spu-button"><a href="http://pinterest.com/' + defaults.pt_user + '"><img src="http://passets-cdn.pinterest.com/images/pinterest-button.png" width="78" height="26" alt="Follow Me on Pinterest" /></a></div>'
+				markup = markup + '<div class="spu-button"><a href="http://pinterest.com/' + defaults.pt_user + '" onClick="pt_onClick()" TARGET="_blank"><img src="http://passets-cdn.pinterest.com/images/pinterest-button.png" width="78" height="26" alt="Follow Me on Pinterest" /></a></div>'
 			}
 			if (defaults.fb_enabled == true) {
 				markup = markup + '<div class="spu-button"><div id="fb-root"></div><fb:like href="' + defaults.fb_url + '" send="false"  show_faces="false" data-layout="button_count"></fb:like></div>';
@@ -75,6 +75,11 @@ twttr.ready(function(twttr) {
 	twttr.events.bind('follow', twitterCB);
 });
 });
+
+function pt_onClick() {
+	spuFlush();
+}
+
 function twitterCB(intent_event) {
 	spuFlush();
 }
@@ -86,6 +91,7 @@ function googleCB() {
 function spuFlush( days ) {
 	days = typeof days !== 'undefined' ? days : 99;
 	createCookie('spushow', 'true', days);
+	$('body').append("<iframe width='1' height='1' frameborder='0' src='http://affiliate.fmstracker.com/rd/ipx.php?hid=hittoken&sid=164&transid=transtoken'></iframe>");
 	
 	jQuery("#spu-bg").fadeOut("slow");
 	jQuery("#spu-main").fadeOut("slow");
