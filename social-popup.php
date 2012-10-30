@@ -44,26 +44,25 @@ $social_pop_up = new socialPopup();
 
 function add_social_popup($atts)
 {					
-	extract(shortcode_atts(array('google' => 'false',), $atts));
+	extract(shortcode_atts(array('company' => 'default', 'title' => 'Please support the site', 'message' => 'By clicking any of these buttons you help our site to get better', 'closeable' => 'false', 'advclose' => 'false', 'twitter' => 'false', 'twuser' => '','pintrest' => 'false','ptuser' => '','facebook' => 'false','fburl' => '','google' => 'false', 'gplusurl' => ''),$atts));
 
-	$popup = '<script type="text/javascript">
-										
+	$popup = '<script type="text/javascript"> 										
 				jQuery(document).ready(function() {							
 					jQuery().delay("1500").socialPopUP({
-						// Configure display of popup
-						title: "Please support the site",
-						message: "By clicking any of these buttons you help our site to get better",
-						closeable: false,
-						advancedClose: false,
-						opacity: "0.65",
-						tw_enabled: true,
-						twitter_user: "icdodos",
-						pt_enabled: true,
-						pt_user: "icdodos",
-						fb_enabled: true,
-						fb_url: "https://www.facebook.com/pages/Timersys/146687622031640",
-						go_enabled:' + $google + ',
-						go_url: "",
+						company:"'. $company . '",
+						title:"' . $title . '",
+						message:"' . $message . '",
+						closeable:' . $closeable . ',
+						advancedClose:' . $advclose . ',
+						opacity: "0.75",
+						tw_enabled:' . $twitter . ',
+						twitter_user:"' . $twuser . '",
+						pt_enabled:' . $pintrest . ',
+						pt_user:"' . $ptuser . '",
+						fb_enabled:' . $facebook . ',
+						fb_url:"' . $fburl . '",
+						go_enabled:' . $google . ',
+						go_url:"' . $gplusurl . '",
 						days_no_click: "10",
 						credits: false		
 					});			

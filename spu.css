@@ -7,7 +7,7 @@
     top:0;
     left:0;
     background:#000000;
-    z-index:998;
+    z-index:2147483646;
 }
 #spu-main {
     position:fixed;
@@ -16,7 +16,7 @@
     width:500px;
     border:10px solid#222;
     background:#fff;
-    z-index:999;
+    z-index:2147483647;
     -moz-border-radius:9px;
     -webkit-border-radius:9px;
     margin:0pt;
