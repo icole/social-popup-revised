@@ -57,6 +57,9 @@
 #spu-msg {
     margin:0 0 22px 0;
 }
+#spu-img {
+    padding-bottom:16px; 
+}
 #spu-bottom {
     padding:5px 10px 10px 0px;
 }

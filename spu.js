@@ -12,7 +12,7 @@
 			var markup = '';
 			markup = markup + '<div id="spu-bg"></div><div id="spu-main"><div id="spu-title">' + spClose + '' + defaults.title + '</div><div id="spu-msg-cont"><div id="spu-msg">' + defaults.message + '</div>';
 			if (defaults.img_url != "" && defaults.img_link != "") {
-				markup = markup + '<a href="' + defaults.img_link + '" onClick="img_onClick()" TARGET="_blank"><img src="' + defaults.img_url + '"></a>';
+				markup = markup + '<div id="spu-img"><a href="' + defaults.img_link + '" onClick="img_onClick()" TARGET="_blank"><img src="' + defaults.img_url + '"></a></div>';
 			}
 			if (defaults.tw_enabled == true) {
 			 	markup = markup + '<div class="spu-button first"><a href="https://twitter.com/' + defaults.twitter_user + '" class="twitter-follow-button" data-show-count="false" data-size="large">Follow Me</a></div>';
@@ -41,8 +41,7 @@
 			var popupHeight = $("#spu-main").height();
 			var popupWidth = $("#spu-main").width();
 			$("#spu-main").css({
-				"position": "absolute",
-				"top": 250,
+				"top": 150,
 				"left": windowWidth / 2 - popupWidth / 2
 			});
 			$("#spu-bg").css({
