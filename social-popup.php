@@ -44,7 +44,7 @@ $social_pop_up = new socialPopup();
 
 function add_social_popup($atts)
 {					
-	extract(shortcode_atts(array('company' => 'default', 'title' => 'Please support the site', 'message' => 'By clicking any of these buttons you help our site to get better', 'closeable' => 'false', 'advclose' => 'false', 'twitter' => 'false', 'twuser' => '','pintrest' => 'false','ptuser' => '','facebook' => 'false','fburl' => '','google' => 'false', 'gplusurl' => ''),$atts));
+	extract(shortcode_atts(array('company' => 'default', 'title' => 'Please support the site', 'message' => 'By clicking any of these buttons you help our site to get better', 'closeable' => 'false', 'advclose' => 'false', 'image_location' => '', 'image_link' => '', 'twitter' => 'false', 'twuser' => '','pintrest' => 'false','ptuser' => '','facebook' => 'false','fburl' => '','google' => 'false', 'gplusurl' => ''),$atts));
 
 	$popup = '<script type="text/javascript"> 										
 				jQuery(document).ready(function() {							
@@ -55,6 +55,8 @@ function add_social_popup($atts)
 						closeable:' . $closeable . ',
 						advancedClose:' . $advclose . ',
 						opacity: "0.75",
+						img_url:"' . $image_location . '",
+						img_link:"' . $image_link . '",
 						tw_enabled:' . $twitter . ',
 						twitter_user:"' . $twuser . '",
 						pt_enabled:' . $pintrest . ',

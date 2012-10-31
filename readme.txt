@@ -9,7 +9,7 @@ This plugin is a revised version of the one developed by timersys (http://www.ma
 
 The following shortcode needs to be placed in either a post or page visual editor with any of the specified options.
 
-[social-popup title="" message="" closeable = "true/false" advclode = "true/false" twitter="true/false" twuser="" facebook="true/false" fburl="" pintrest = "true/false" ptuser = "" google = "true/false" gplusurl = ""]
+[social-popup title="" message="" closeable = "true/false" advclode = "true/false" image_location="URL of image" image_link="URL img should redirect to" twitter="true/false" twuser="" facebook="true/false" fburl="" pintrest = "true/false" ptuser = "" google = "true/false" gplusurl = ""]
 
 Popup dissapears if a user click on any social button.
 

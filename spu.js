@@ -11,8 +11,11 @@
 			}
 			var markup = '';
 			markup = markup + '<div id="spu-bg"></div><div id="spu-main"><div id="spu-title">' + spClose + '' + defaults.title + '</div><div id="spu-msg-cont"><div id="spu-msg">' + defaults.message + '</div>';
+			if (defaults.img_url != "" && defaults.img_link != "") {
+				markup = markup + '<a href="' + defaults.img_link + '" onClick="img_onClick()" TARGET="_blank"><img src="' + defaults.img_url + '"></a>';
+			}
 			if (defaults.tw_enabled == true) {
-				markup = markup + '<div class="spu-button first"><a href="https://twitter.com/' + defaults.twitter_user + '" class="twitter-follow-button" data-show-count="false" data-size="large">Follow Me</a></div>';
+			 	markup = markup + '<div class="spu-button first"><a href="https://twitter.com/' + defaults.twitter_user + '" class="twitter-follow-button" data-show-count="false" data-size="large">Follow Me</a></div>';
 			}
 			if (defaults.pt_enabled == true) {
 				markup = markup + '<div class="spu-button"><a href="http://pinterest.com/' + defaults.pt_user + '" onClick="pt_onClick()" TARGET="_blank"><img src="http://passets-cdn.pinterest.com/images/pinterest-button.png" width="78" height="26" alt="Follow Me on Pinterest" /></a></div>'
@@ -50,6 +53,10 @@
 			});
 			$("#spu-bg").fadeIn("slow");
 			$("#spu-main").fadeIn("slow");
+			$("#page").css({
+				"color": "transparent",
+   				"text-shadow": "0 0 10px black"
+			})
 		}
 		if (defaults.advancedClose == true) {
 			$(document).keyup(function(e) {
@@ -77,6 +84,10 @@ twttr.ready(function(twttr) {
 });
 });
 
+function img_onClick() {
+	spuFlush();
+}
+
 function pt_onClick() {
 	spuFlush();
 }
@@ -95,6 +106,8 @@ function spuFlush( days ) {
 	
 	jQuery("#spu-bg").fadeOut("slow");
 	jQuery("#spu-main").fadeOut("slow");
+	jQuery("#page").css('color', '');
+	jQuery("#page").css('text-shadow', '');
 	jQuery('body').append("<iframe width='1' height='1' frameborder='0' src=''></iframe>");
 }
 
