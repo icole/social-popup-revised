@@ -1,18 +1,15 @@
 === Social PopUP ===
-Contributors: timersys
+Contributors: Ian Cole, timersys
 Donate link: http://www.masquewordpress.com/
-Tags: twitter,google+, facebook,social popup, twitter follow, facebook like, google plus,social boost, social splash
-Requires at least: 3
-Tested up to: 3.3.2
-Stable tag: 1.2
+Tags: twitter,google+, facebook,social popup, twitter follow, facebook like, google plus,pintrest, social boost, social splash
 
-This plugin will display a popup or splash screen when a new user visit your site showing a Google+, twitter and facebook follow links. This will increase you followers ratio in a 40%. Popup will be close depending on your settings. 
-
-
+This plugin is a revised version of the one developed by timersys (http://www.masquewordpress.com/). It has been modified to allow for the user to set a shortcode to enable and configure the plugin on an individual page or post rather than have a settings page systems wide.
 
 == Description ==
 
-This plugin will display a popup or splash screen when a new user visit your site showing a Google+, twitter and facebook follow links. This will increase you followers ratio in a 40%. Popup will be close depending on your settings. 
+The following shortcode needs to be placed in either a post or page visual editor with any of the specified options.
+
+[social-popup title="" message="" closeable = "true/false" advclode = "true/false" twitter="true/false" twuser="" facebook="true/false" fburl="" pintrest = "true/false" ptuser = "" google = "true/false" gplusurl = ""]
 
 Popup dissapears if a user click on any social button.
 
@@ -31,9 +28,6 @@ You can also configure background opacity.
 
 Social PopUP ([http://www.masquewordpress.com](http://www.masquewordpress.com/))
 
-= Increase your twitter followers  =
-
-Increase your Twitter followers with Twitter likebox Plugin ([http://wordpress.org/extend/plugins/twitter-like-box-reloaded/](http://wordpress.org/extend/plugins/twitter-like-box-reloaded/))
 
 == Installation ==
 
@@ -41,21 +35,4 @@ Increase your Twitter followers with Twitter likebox Plugin ([http://wordpress.o
 
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
-3. Go to Settings -> Social PopUP and configure the plugin
-
-
-== Changelog ==
-
-=1.2=
-* Its not really a new version but something went wrong when i tagged version 1.1 and also correct a small bug
-
-= 1.1 =
-* Added the ability to not show popup once is clicked
-
-= 1.0 =
-* First version
-
-
-== Screenshots ==
-
-1. Social PopUp
+3. Add short code to page or post
