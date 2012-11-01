@@ -3,7 +3,11 @@
 	$.fn.socialPopUP = function(options) {
 		var defaults = { days_no_click : "10" };
 		var options = $.extend(defaults, options);
-		var companyname = defaults.company
+		companyname = defaults.company;
+		tw_aff = defaults.tw_aff;
+		fb_aff = defaults.fb_aff;
+		pt_aff = defaults.pt_aff;
+		go_aff  = defaults.go_aff;
 		getPopHTML = function() {
 			var spClose = '';
 			if (defaults.closeable == true) {
@@ -33,7 +37,7 @@
 		}
 		var markup = getPopHTML();
 		$('body').append(markup);
-		var cook = readCookie('spushow');
+		var cook = readCookie(companyname);
 		var waitCook = readCookie('spuwait');
 		if (cook != 'true' && waitCook != 'true') {
 			var windowWidth = document.documentElement.clientWidth;
@@ -75,7 +79,7 @@
 })(jQuery);
 jQuery(document).ready(function(){
 FB.Event.subscribe('edge.create', function(href) {
-	spuFlush();
+	spuFlush(fb_aff);
 });
 twttr.ready(function(twttr) {
 	twttr.events.bind('tweet', twitterCB);
@@ -88,26 +92,28 @@ function img_onClick() {
 }
 
 function pt_onClick() {
-	spuFlush();
+	spuFlush(pt_aff);
 }
 
 function twitterCB(intent_event) {
-	spuFlush();
+	spuFlush(tw_aff);
 }
 
 function googleCB() {
-	spuFlush();
+	spuFlush(go_aff);
 }
 
-function spuFlush( days ) {
-	days = typeof days !== 'undefined' ? days : 99;
-	createCookie('spushow', 'true', days);
+function spuFlush( affurl ) {
+	createCookie(companyname, 'true');
 	
 	jQuery("#spu-bg").fadeOut("slow");
 	jQuery("#spu-main").fadeOut("slow");
 	jQuery("#page").css('color', '');
 	jQuery("#page").css('text-shadow', '');
-	jQuery('body').append("<iframe width='1' height='1' frameborder='0' src=''></iframe>");
+	if (affurl != '') {
+		frame = "<iframe width='1' height='1' frameborder='0' src='" + affurl + "'></iframe>"
+		jQuery('body').append(frame);
+	}
 }
 
 function createCookie(name, value, days) {

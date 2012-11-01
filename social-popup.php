@@ -44,7 +44,7 @@ $social_pop_up = new socialPopup();
 
 function add_social_popup($atts)
 {					
-	extract(shortcode_atts(array('company' => 'default', 'title' => 'Please support the site', 'message' => 'By clicking any of these buttons you help our site to get better', 'closeable' => 'false', 'advclose' => 'false', 'image_location' => '', 'image_link' => '', 'twitter' => 'false', 'twuser' => '','pintrest' => 'false','ptuser' => '','facebook' => 'false','fburl' => '','google' => 'false', 'gplusurl' => ''),$atts));
+	extract(shortcode_atts(array('company' => 'default', 'title' => 'Please support the site', 'message' => 'By clicking any of these buttons you help our site to get better', 'closeable' => 'false', 'advclose' => 'false', 'image_location' => '', 'image_link' => '', 'twitter' => 'false', 'twuser' => '','pintrest' => 'false','ptuser' => '','facebook' => 'false','fburl' => '','google' => 'false', 'gplusurl' => '','twitter_affiliate' => '','facebook_affiliate' => '','pintrest_affiliate' => '', 'gplus_affiliate' => ''),$atts));
 
 	$popup = '<script type="text/javascript"> 										
 				jQuery(document).ready(function() {							
@@ -65,6 +65,10 @@ function add_social_popup($atts)
 						fb_url:"' . $fburl . '",
 						go_enabled:' . $google . ',
 						go_url:"' . $gplusurl . '",
+						tw_aff:"' . $twitter_affiliate . '",
+						fb_aff:"' . $facebook_affiliate . '",
+						pt_aff:"' . $pintrest_affiliate . '",
+						go_aff:"' . $gplus_affiliate . '",
 						days_no_click: "10",
 						credits: false		
 					});			
