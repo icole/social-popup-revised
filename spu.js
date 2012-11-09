@@ -111,8 +111,7 @@ function spuFlush( affurl ) {
 	jQuery("#page").css('color', '');
 	jQuery("#page").css('text-shadow', '');
 	if (affurl != '') {
-		frame = "<iframe width='1' height='1' frameborder='0' src='" + affurl + "'></iframe>"
-		jQuery('body').append(frame);
+		jQuery.get(affurl);
 	}
 }
 
