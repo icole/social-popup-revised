@@ -46,12 +46,6 @@
 #spu-msg-cont {
     border-bottom:1px solid#ccc;
     border-top:1px solid#ccc;
-    background-image:linear-gradient(bottom,#D8E7FC 0%,#EBF2FC 65%);
-    background-image:-o-linear-gradient(bottom,#D8E7FC 0%,#EBF2FC 65%);
-    background-image:-moz-linear-gradient(bottom,#D8E7FC 0%,#EBF2FC 65%);
-    background-image:-webkit-linear-gradient(bottom,#D8E7FC 0%,#EBF2FC 65%);
-    background-image:-ms-linear-gradient(bottom,#D8E7FC 0%,#EBF2FC 65%);
-    background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0,#D8E7FC),color-stop(0.85,#EBF2FC));
     padding:16px;
 }
 #spu-msg {
@@ -59,6 +53,11 @@
 }
 #spu-img {
     padding-bottom:16px; 
+}
+#spu-img img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
 }
 #spu-bottom {
     padding:5px 10px 10px 0px;
